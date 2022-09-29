@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="/css/movies.css" />
+<video src="/img/videos/video2.mp4" muted loop autoplay></video>
+<div class="overlay"></div>
+
+<div class="banner">
+    <div class="header2">
+        <a href="#" class="logo"><img src="/img/mv-logos/Joker-logo.png" alt="Logo" /></a>
+    </div>
+    <div class="content">
+        <h2>Put on a <span>Happy</span> face</h2>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis
+            velit vel exercitationem nam voluptate modi culpa delectus vero non
+            obcaecati!
+        </p>
+        <!--a href="#" class="play" onclick="toggle2();"><img src="/img/icons/play.png" alt="Play" />Watch trailer</a-->
+        <div class="slide"></div>
+    </div>
+</div>
+<!--div class="trailer">
+    <video src="/img/videos/Joker-trailer.mp4" controls="true"></video>
+    <img src="/img/icons/close.png" alt="close" class="close" onclick="toggle2();" />
+</div-->
+<script type="text/javascript">
+    function toggle2() {
+        var trailer = document.querySelector(".trailer");
+        var video = document.querySelector("video");
+        trailer.classList.toggle2("active");
+        video.currentTime = 0;
+        video.pause();
+    }
+</script>

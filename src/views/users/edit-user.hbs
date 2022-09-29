@@ -1,0 +1,74 @@
+<video src="/img/videos/video2.mp4" muted loop autoplay></video>
+<div class="overlay"></div>
+
+<div class="container p-5">
+    <a href="/users" class="btn bg-blue m-0"><i class="fas fa-arrow-left"></i></a>
+    {{#each errors}}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{text}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {{/each}}
+
+    <div class="col-md-4 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                <h3>Editar</h3>
+            </div>
+            <div class="card-body">
+                <form action="/users/edit-user/{{user._id}}?_method=PUT" method="POST">
+                    <input type="hidden" name="_method" value="PUT">
+
+                    <div class="form-group ">
+                        <div class="required field">
+                            <label for="name">Nombre</label>
+                            <input type="text" class="form-control" name="name" value="{{user.name}}" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="required field">
+                            <label for="email">Correo</label>
+                            <input type="email" class="form-control" name="email" value="{{user.email}}" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend required field">
+                                <label class="input-group-text">Tipo</label>
+                            </div>
+                            <select class="custom-select" name="type">
+                                <option selected value="{{user.type}}">> {{user.type}} (Actual)</option>
+                                <option value="Administrador"> Administrador </option>
+                                <option value="Usuario"> Usuario </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend required field">
+                                <label class="input-group-text">Permisos</label>
+                            </div>
+                            <select class="custom-select" name="permissions">
+                                <option selected value="{{user.permissions}}">> {{user.permissions}} (Actual)</option>
+                                <option value="true"> Acceso Total </option>
+                                <option value="false"> Sin Acceso </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" type="submit">
+                            Guardar
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<video src="/img/videos/video2.mp4" muted loop autoplay></video>
+<div class="overlay"></div>
+
+<div class="container p-5">
+  <div class="text">
+    <h3>Bienvenido: {{user.name}}</h3>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-blue">
+    <div> PANEL DE CONTROL: MÁQUINAS </div>
+  </nav>
+  <div class="jumbotron">
+    <div class="row2">
+      {{#each notes}}
+      <div class="row-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title d-flex justify-content-between align-items-center"> {{ title }} </h4>
+            <hr>
+            <span class="badge">{{type}}</span>
+            <p>{{ description }} </p>
+          </div>
+        </div>
+      </div>
+      {{else}}
+      <div class="card mx-auto">
+        <div class="card-body">
+          <p clsss="lead">Parece que aún no tienes Laboratorios.</p>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<video src="/img/videos/video3.mp4" muted loop autoplay></video>
+<div class="overlay"></div>
+
+<div class="container p-5">
+    <div class="text">
+        <h4>Bienvenido: {{user.name}}</h4>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-blue">
+        <div> PANEL DE CONTROL: USUARIOS </div>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a href="/users/signup" class="btn btn-success m-0"><i class="fas fa-user-plus"> Registrar</i></a>
+            </li>
+        </ul>
+    </nav>
+    <div class="jumbotron">
+        <div class="row2">
+            {{#each users}}
+            <div class="row-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title d-flex justify-content-between align-items-center">
+                            ID: {{_id}}<a href="/users/edit/{{_id}}"><i class="fas fa-edit"></i></a>
+                        </p>
+
+                        <p class="card-title d-flex justify-content-between align-items-center">
+                            Usuario: {{name}}
+                        </p>
+                        <p>Correo: {{email}} </p>
+                        <p>Tipo de cuenta: {{type}} </p>
+                        <p>Permisos de Acceso: {{permissions}}</p>
+                        <p>Registrado el día: {{createdAt}} </p>
+
+                        <!-- DELETE REQUEST -->
+                        <form action="/users/delete/{{_id}}?_method=DELETE" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-danger m-0"><i class="fas fa-ban"></i> Borrar</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            {{else}}
+            <div class="card mx-auto">
+                <div class="card-body">
+                    <p clsss="lead">Parece que aún no hay usuarios registrados.</p>
+                    <a href="/users/signup" class="btn btn-success btn-block">¡Registrar uno ahora!</a>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

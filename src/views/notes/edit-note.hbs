@@ -1,0 +1,75 @@
+<video src="/img/videos/video2.mp4" muted loop autoplay></video>
+<div class="overlay"></div>
+
+<div class="container p-5">
+  <a href="/notes" class="btn bg-blue m-0"><i class="fas fa-arrow-left"></i></a>
+  {{#each errors}}
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{text}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {{/each}}
+
+  <div class="col-md-4 mx-auto">
+    <div class="card">
+      <div class="card-header">
+        <h3>Editar</h3>
+      </div>
+      <div class="card-body">
+        <form action="/notes/edit-note/{{note._id}}?_method=PUT" method="POST">
+          <input type="hidden" name="_method" value="PUT">
+
+          <div class="form-group ">
+            <div class="required field">
+              <label for="title">título</label>
+              <input type="text" class="form-control" name="title" value="{{note.title}}" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend required field">
+                <label class="input-group-text">Género</label>
+              </div>
+              <select class="custom-select" name="type">
+                <option selected value="{{note.type}}">> {{note.type}} (Actual)</option>
+                <option value="Acción"> Acción </option>
+                <option value="Comedia"> Comedia </option>
+                <option value="Drama"> Drama </option>
+                <option value="Suspenso"> Suspenso </option>
+                <option value="Crímen"> Crímen </option>
+                <option value="Romance"> Romance </option>
+                <option value="Aventura"> Aventura </option>
+                <option value="Terror"> Terror </option>
+                <option value="Musical"> Musical </option>
+                <option value="Ciencia Ficción"> Ciencia Ficción </option>
+                <option value="Guerra"> Guerra </option>
+                <option value="Animación"> Animación </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <textarea name="description" class="form-control">{{note.description}}</textarea>
+          </div>
+
+          <div class="form-group ">
+            <div class="required field">
+              <label for="quantity">Cantidad</label>
+              <input type="number" class="form-control" name="quantity" min="1" max="100" value="{{note.quantity}}" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <button class="btn btn-primary btn-block" type="submit">
+              Guardar
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
