@@ -1,0 +1,53 @@
+    ____________
+ __| Terminal 1 |___________
+|
+|//INICIAR SERVIDOR NODE
+|
+|$npm run dev 
+|
+|___________________________
+
+
+
+    ____________
+ __| Terminal 2 |___________
+|
+|//SERVIDOR MONGODB
+|
+|$mongod
+|
+|___________________________
+
+
+    ____________
+ __| Terminal 3 |___________
+|
+|//CLIENTE MONGODB
+|
+|$mongo
+|
+|>use peliculasdb -> Seleccionar la base de Datos
+|switched to db notes-db-app
+|
+|>show collections -> Mostrar Modelo de datos
+|sessions
+|notes
+|users
+|
+|>db.notes.find().pretty() -> Mostrar Base de Datos
+|datos de la DB
+|
+|>db.dropDatabase() -> eliminar Base de datos
+|___________________________
+
+
+
+
+// Handlebars
+const Handlebars = require('handlebars');
+const {
+  allowInsecurePrototypeAccess,
+} = require('@handlebars/allow-prototype-access');
+
+
+handlebars: allowInsecurePrototypeAccess(Handlebars),

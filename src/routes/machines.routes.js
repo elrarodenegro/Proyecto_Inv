@@ -8,7 +8,7 @@ const { renderLabs, renderVm } = require("../controllers/machines.controller");
 const { isAuthenticated } = require("../helpers/auth");
 
 // Get Labs
-router.get("/machines/all-movies", isAuthenticated, renderLabs);
+router.get("/machines/all-products", isAuthenticated, renderLabs);
 
 // Get VMs
 router.get("/machines/machine", isAuthenticated, renderVm);

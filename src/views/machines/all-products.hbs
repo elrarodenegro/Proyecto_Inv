@@ -1,0 +1,37 @@
+<!--video src="/img/videos/video.mp4" muted loop autoplay></video-->
+<div class="overlay"></div>
+<!-- Sección de la mitad -cursos- -->
+<div class="text">
+  <h3>Productos</h3>
+
+  <div class="grid bg-gray">
+    {{#each notes}}
+    <!-- Card 1-->
+    <div class="course">
+      <div class="face face1">
+        <div class="content">
+          <img src="/img/mv-miniatures/{{title}}-min.png" alt="{{title}}">
+          <h3>{{title}}</h3>
+        </div>
+      </div>
+      <div class="face face2">
+        <div class="content">
+          <h5 class="bg-{{type}}">{{type}}</h5>
+          <hr>
+          <p>{{description}}</p>
+          <!--a href="/machines/{{title}}">¡Empezar!</a-->
+          <a href="#">Detalles</a>
+        </div>
+      </div>
+    </div>
+    {{else}}
+    <div class="card mx-auto">
+      <article class="card h-100" style="background: #363636; color: #fff; border: 1px solid #333;">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <p clsss="lead">OOPS... Parece que aún no tienesningún Producto.</p>
+        </div>
+      </article>
+    </div>
+    {{/each}}
+  </div>
+</div>

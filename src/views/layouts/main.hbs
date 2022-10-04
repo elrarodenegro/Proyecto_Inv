@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StreaMov</title>
+    <title>FINANCIAL</title>
     <!-- BOOTSTRAP 4 CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -26,7 +26,7 @@
             <h4>¡Hola, {{user.name}}!</h4>
             <hr>
             <li><a href="/" onclick="toggleMenu();"><i class="fas fa-home"></i> Inicio</a></li>
-            <li><a href="/machines/all-movies" onclick="toggleMenu();"><i class="fas fa-film"></i> Películas</a></li>
+            <li><a href="/machines/all-products" onclick="toggleMenu();"><i class="fas fa-cube"></i> Productos</a></li>
             <hr>
             <li><a href="/users" onclick="toggleMenu();"><i class="fas fa-users-cog"></i> Adm. usuarios</a></li>
             <li><a href="/notes" onclick="toggleMenu();"><i class="fas fa-cogs"></i> Adm. Inventario</a></li>
@@ -36,6 +36,7 @@
             {{else}}
             <li><a href="/" onclick="toggleMenu();"><i class="fas fa-home"></i> Inicio</a></li>
             <li><a href="/users/signin" onclick="toggleMenu();"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a></li>
+            <li><a href="/users/signup" onclick="toggleMenu();"><i class="fas fa-sign-in-alt"></i> Registrarse</a></li>
             {{/if}}
         </ul>
     </div>
@@ -43,7 +44,7 @@
     <section class="banner">
         <header>
             <a href="/">
-                <h4 class="logo"><img src="/img/logos/Streamov2.png" width="15%" alt="txt"> V2.0</h4>
+                <h4 class="logo"><img src="/img/logos/Bank2.png" width="15%" alt="txt"> V2.0</h4>
             </a>
             <div class="toggle" onclick="toggleMenu();"></div>
         </header>
